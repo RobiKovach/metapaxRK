@@ -1,0 +1,413 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:,300,regular,500,600,700,800);
+@charset "UTF-8";
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #fff;
+  line-height: 1;
+  font-family: "";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 120rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+*/
+body {
+  width: 1920px;
+  height: 1080px;
+}
+
+.main {
+  position: relative;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  position: relative;
+  overflow: hidden;
+}
+.page__scroll {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 90px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  z-index: 10;
+}
+
+.scroll__arrow {
+  width: 18px;
+  height: 18px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+  z-index: 3;
+}
+
+.page-one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+.page-one__title {
+  font-weight: 800;
+  font-size: 59px;
+  line-height: 150%;
+  text-align: center;
+  max-width: 1518px;
+  max-width: 1300px;
+  z-index: 3;
+  margin-top: -300px;
+  transform: translateX(45%);
+  transition: 1s;
+}
+.page-one__img {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  transition: 1s;
+}
+.page-one__left-gradient {
+  position: absolute;
+  bottom: -550px;
+  left: -700px;
+}
+.page-one__right-gradient {
+  position: absolute;
+  top: -700px;
+  right: -700px;
+}
+
+.page-two {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page-two__title {
+  opacity: 0;
+  font-weight: 800;
+  font-size: 59px;
+  line-height: 150%;
+  text-align: center;
+  max-width: 1518px;
+  max-width: 1300px;
+  z-index: 3;
+  margin-top: -300px;
+  transition: 1s;
+}
+.page-two__left-img {
+  position: absolute;
+  left: 0;
+  transition: 1s;
+  transform: translateX(-200%);
+}
+.page-two__right-img {
+  position: absolute;
+  right: 0;
+  transition: 0.6s;
+  transform: translateX(200%);
+}
+
+.page-three {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-three__logo {
+  margin-top: 0px;
+  transform: translateY(-200%);
+  transition: 1s;
+}
+.page-three__span {
+  font-weight: 800;
+  font-size: 59px;
+  line-height: 150%;
+  text-align: center;
+  transform: translateY(500%);
+  transition: 1s;
+}
+
+.page-four {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #161616;
+  transform: translateX(500%);
+  padding: 90px 120px 90px 120px;
+  transition: 1.5s;
+}
+.page-four video {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.page-four__glasses {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.page-four__logo {
+  width: 134px;
+  height: 81px;
+  margin: 0px 0 250px 0px;
+  z-index: 15;
+  z-index: 2;
+}
+.page-four__title {
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  position: relative;
+  max-width: 590px;
+  margin: 0px 0px 127px 0px;
+  z-index: 2;
+}
+.page-four__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 102px;
+  height: 3px;
+  width: 135px;
+  background: #F48B44;
+}
+.page-four__description {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 130%;
+  max-width: 450px;
+  z-index: 2;
+}
+
+.page__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  position: absolute;
+  right: 120px;
+  top: 90px;
+  width: 60px;
+  height: 60px;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  z-index: 2;
+}
+.page__pagination {
+  position: absolute;
+  right: 120px;
+  bottom: 90px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 130%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  z-index: 2;
+}
+
+.menu-item__one {
+  width: 100%;
+  display: flex;
+  height: 1px;
+  background: #fff;
+}
+.menu-item__two {
+  width: 100%;
+  display: flex;
+  height: 1px;
+  background: #fff;
+}
+
+.pagination__namber {
+  color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 3px;
+  border-bottom: 1px solid #fff;
+}
+.pagination__namber span {
+  color: #fff;
+}
